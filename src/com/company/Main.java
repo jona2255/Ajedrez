@@ -4,7 +4,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-
         /*
         1. Tablero => 8 casillas, bordes (arriba, abajo, izquierda, derecha),
             posicion (1-8 de abajo a arriba, A-H izquierda a derecha).
@@ -41,6 +40,5 @@ public class Main {
 
  */
 
-        System.out.println("HOLA MUNDO!!!");
-    }
+        System.out.println("HOLA MUNDO!!!");    }
 }
