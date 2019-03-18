@@ -38,7 +38,16 @@ public class Main {
           - - - - - - - -
           A B C D E F G H
 
- */
+        */
 
-        System.out.println("HOLA MUNDO!!!");    }
+            Jugador1 jugador1 = new Jugador1();
+            Jugador2 jugador2 = new Jugador2();
+
+            String nick1 = jugador1.nick();
+            String nick2 = jugador2.nick();
+
+
+
+        System.out.println("HOLA MUNDO!!!");
+    }
 }
