@@ -2,8 +2,13 @@ package com.company;
 
 public class Reina {
 
-    int posicionInicial;
-    int posicionFinal;
+    int posicionInicialB;
+    int posicionFinalB;
 
+    int posicionInicialN;
+    int posicionFinalN;
+
+    int QB = 25;
+    int QN = 35;
 
 }

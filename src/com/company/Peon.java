@@ -2,8 +2,13 @@ package com.company;
 
 public class Peon {
 
-    int posicionInicial;
-    int posicionFinal;
+    int posicionInicialB;
+    int posicionFinalB;
 
+    int posicionInicialN;
+    int posicionFinalN;
+
+    int PB = 21;
+    int PN = 31;
 
 }

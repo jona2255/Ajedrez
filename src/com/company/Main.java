@@ -46,8 +46,8 @@ public class Main {
             String nick1 = jugador1.nick();
             String nick2 = jugador2.nick();
 
+            Tablero tablero = new Tablero();
 
-
-        System.out.println("HOLA MUNDO!!!");
+            tablero.pintarTablero();
     }
 }
