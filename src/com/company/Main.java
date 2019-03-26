@@ -20,7 +20,7 @@ public class Main {
         Pantalla de juego
 
           - - - - - - - -
-        8|T|C|A|Q|K|A|C|T|		P = Peones
+        8|T|C|A|Q|K|A|C|T|      P = Peones
           - - - - - - - -		T = Torres
         7|P|P|P|P|P|P|P|P|		C = Caballos
           - - - - - - - -		A = Alfiles
@@ -40,14 +40,33 @@ public class Main {
 
         */
 
-            Jugador1 jugador1 = new Jugador1();
-            Jugador2 jugador2 = new Jugador2();
+        Jugador jugador1 = new Jugador();
+        Jugador jugador2 = new Jugador();
+        Tablero tablero = new Tablero();
+        Reglas reglas = new Reglas();
+        Piezas piezas = new Piezas();
 
-            String nick1 = jugador1.nick();
-            String nick2 = jugador2.nick();
+        String nick1 = jugador1.nick();
+        String nick2 = jugador2.nick();
 
-            Tablero tablero = new Tablero();
+        reglas.asignarJugadores(jugador1, jugador2);
 
-            tablero.pintarTablero();
+//            while (jugador.ganador != true && jugador2.ganador != true){
+//
+//
+//            }
+
+        tablero.pintarTablero();
+
+        reglas.turnos();
+
+        String posInicial = piezas.movimientoOrigenPiezas();
+        String posFinal = piezas.movimientoFinalPiezas();
+
+        tablero.posPieza(posInicial);
+
+        tablero.posPieza(posFinal);
+
+
     }
 }
