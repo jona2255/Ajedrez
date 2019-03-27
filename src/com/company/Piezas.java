@@ -80,14 +80,14 @@ public class Piezas {
     String movimientoOrigenPiezas(){
 
         System.out.println();
-        System.out.println("Introduce la posicion de la pieza que quieras mover: ");
+        System.out.println("Introduce la posicion de la pieza que quieres mover: ");
         String posInicial = scanner.nextLine();
         return posInicial;
     }
     String movimientoFinalPiezas(){
 
 
-        System.out.println("Introduce la posicion donde quieras mover la pieza: ");
+        System.out.println("Introduce la posicion donde quieres mover la pieza: ");
         String posFinal = scanner.nextLine();
         return posFinal;
     }

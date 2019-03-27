@@ -7,6 +7,8 @@ public class Reglas {
     Jugador jugador;
     Jugador jugador2;
 
+    Piezas piezas;
+
     int turno = 1;
 
     void turnos() {
@@ -31,5 +33,9 @@ public class Reglas {
     void movimientoMalo() {
 
         System.out.println("Movimiento no valido, introduce de uevo tu movimiento: ");
+
+        piezas.movimientoOrigenPiezas();
+        piezas.movimientoFinalPiezas();
+
     }
 }

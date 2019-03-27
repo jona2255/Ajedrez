@@ -46,8 +46,9 @@ public class Main {
         Reglas reglas = new Reglas();
         Piezas piezas = new Piezas();
 
-        String nick1 = jugador1.nick();
-        String nick2 = jugador2.nick();
+
+        String nick1 = jugador1.nick("1");
+        String nick2 = jugador2.nick("2");
 
         reglas.asignarJugadores(jugador1, jugador2);
 
@@ -63,10 +64,11 @@ public class Main {
         String posInicial = piezas.movimientoOrigenPiezas();
         String posFinal = piezas.movimientoFinalPiezas();
 
-        tablero.posPieza(posInicial);
+        int posInicialY = tablero.posPiezaY(posInicial);
+        int posInicialX = tablero.posPiezaX(posInicial);
+        int posFinalY = tablero.posPiezaY(posFinal);
+        int posFinalX = tablero.posPiezaX(posFinal);
 
-        tablero.posPieza(posFinal);
-
-
+        tablero.pieza(posInicialY,posInicialX,posFinalY,posFinalX);
     }
 }

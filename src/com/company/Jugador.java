@@ -8,11 +8,13 @@ public class Jugador {
 
     String nick;
 
+    Reglas reglas;
+
     boolean ganador = false;
 
-    String nick(){
+    String nick(String jugador){
 
-        System.out.println("Introduce el nombre del Jugador: ");
+        System.out.println("Introduce tu nombre de Jugador " + jugador +": ");
         nick =  scanner.nextLine();
         System.out.println();
 
