@@ -11,6 +11,9 @@ public class Reglas {
 
     int turno = 1;
 
+    boolean movValido = true;
+
+
     void turnos() {
 
         System.out.println();
@@ -34,8 +37,41 @@ public class Reglas {
 
         System.out.println("Movimiento no valido, introduce de uevo tu movimiento: ");
 
-        piezas.movimientoOrigenPiezas();
-        piezas.movimientoFinalPiezas();
+
+    }
+
+    void movimientoValido(Tablero tablero, int posInicialY, int posInicialX, int posFinalY, int posFinalX, int posTablero){
+
+
+        if (turno == 2){
+
+            if (posFinalY != posInicialY && posFinalX == posInicialX){
+
+                for (int i = posInicialY; i >= posFinalY; i--) {
+
+                    if (tablero.casillas[i][posInicialX] > 10){
+
+                        movValido = false;
+                    }
+                }
+
+            }
+
+        } else {
+
+            if (posFinalY != posInicialY && posFinalX == posInicialX){
+
+                for (int i = posInicialY; i >= posFinalY; i++) {
+
+                    if (tablero.casillas[i][posInicialX] > 10){
+
+                        movValido = false;
+                    }
+                }
+
+            }
+
+        }
 
     }
 }

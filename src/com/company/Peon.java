@@ -2,40 +2,36 @@ package com.company;
 
 public class Peon {
 
-    int posicionInicialB;
-    int posicionFinalB;
-
-    int posicionInicialN;
-    int posicionFinalN;
-
     int PB = 21;
     int PN = 31;
 
-    Tablero tablero;
-    Reglas reglas2 = new Reglas();
+    Reglas reglas = new Reglas();
 
-    boolean movimientoPeon(int posInicialY, int posInicialX, int posFinalY, int posFinalX){
+    void movimientoPeon(Tablero tablero, int posInicialY, int posInicialX, int posFinalY, int posFinalX ,int posTablero){
 
-        boolean movimientoValido = true;
 
-        if (posInicialY == 13 && (posFinalY - posInicialY) > 4){
+        if (reglas.turno == 2){
 
-            reglas2.movimientoMalo();
-
+            if (posInicialY - posFinalY <= 2 ){
+                reglas.movimientoValido(tablero, posInicialY, posInicialX, posFinalY, posFinalX, posTablero);
+            } else if (posInicialY == 13 && (posInicialY - posFinalY) >= 4){
+                reglas.movimientoValido(tablero, posInicialY, posInicialX, posFinalY, posFinalX, posTablero);
+            } else if (posFinalX - posInicialX == 2){
+                reglas.movimientoValido(tablero, posInicialY, posInicialX, posFinalY, posFinalX, posTablero);
+            }
         } else {
 
-            for (int i = posInicialY+1; i < posFinalY; i++) {
-                for (int j = posInicialX+1; j < posFinalX; j++) {
-
-                    if (tablero.tablero[i][j] > 20){
-                        movimientoValido = false;
-                    }
-                }
+            if (posFinalY - posInicialY == 2 ){
+                reglas.movimientoValido(tablero, posInicialY, posInicialX, posFinalY, posFinalX, posTablero);
+            } else if (posInicialY == 3 && (posFinalY - posInicialY) >= 4){
+                reglas.movimientoValido(tablero, posInicialY, posInicialX, posFinalY, posFinalX, posTablero);
+            } else if (posInicialX - posFinalX == 2){
+                reglas.movimientoValido(tablero, posInicialY, posInicialX, posFinalY, posFinalX, posTablero);
             }
 
         }
 
-        return movimientoValido;
+
 
     }
 }

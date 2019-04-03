@@ -2,7 +2,7 @@ package com.company;
 
 public class Tablero {
 
-    int[][] tablero = {{0, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0},
+    int[][] casillas = {{0, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0},
             {8, 10, 32, 10, 33, 10, 34, 10, 35, 10, 36, 10, 34, 10, 33, 10, 32, 10},
             {0, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0, 9, 0},
             {7, 10, 31, 10, 31, 10, 31, 10, 31, 10, 31, 10, 31, 10, 31, 10, 31, 10},
@@ -37,7 +37,7 @@ public class Tablero {
 
             for (int j = 0; j < 18; j++) {
 
-                piezas.mostrarPieza(tablero[i][j]);
+                piezas.mostrarPieza(casillas[i][j]);
 
             }
             System.out.print("      " + reglas.Piezas[i]);
@@ -72,7 +72,7 @@ public class Tablero {
         for (int i = 0; i < 18; i++) {
             for (int j = 0; j < 18; j++) {
 
-                if (posTranformadaX == tablero[i][j]){
+                if (posTranformadaX == casillas[i][j]){
                     return j;
                 }
 
@@ -107,7 +107,7 @@ public class Tablero {
         for (int i = 0; i < 18; i++) {
             for (int j = 0; j < 18; j++) {
 
-                if (posTranformadaY == tablero[i][j]){
+                if (posTranformadaY == casillas[i][j]){
                     return i;
                 }
 
@@ -119,32 +119,36 @@ public class Tablero {
 
     void pieza(int posInicialY, int posInicialX, int posFinalY, int posFinalX){
 
-        if (tablero[posInicialY][posInicialX] == 21){
+        if (casillas[posInicialY][posInicialX] == 21){
             // Peon Blanco
 
-            peon.movimientoPeon(posInicialY,posInicialX,posFinalY,posFinalX);
+            peon.movimientoPeon(this, posInicialY,posInicialX,posFinalY,posFinalX,21);
 
-        } else if (tablero[posInicialY][posInicialX] == 22){
+        } else if (casillas[posInicialY][posInicialX] == 22){
             // Torre Blanca
-        } else if (tablero[posInicialY][posInicialX] == 23){
+        } else if (casillas[posInicialY][posInicialX] == 23){
             // Caballo Blanco
-        } else if (tablero[posInicialY][posInicialX] == 24){
+
+
+        } else if (casillas[posInicialY][posInicialX] == 24){
             // Alfil Blanco
-        } else if (tablero[posInicialY][posInicialX] == 25){
+        } else if (casillas[posInicialY][posInicialX] == 25){
             // Reina Blanca
-        } else if (tablero[posInicialY][posInicialX] == 26){
+        } else if (casillas[posInicialY][posInicialX] == 26){
             // Rey Blanco
-        } else if (tablero[posInicialY][posInicialX] == 31){
+        } else if (casillas[posInicialY][posInicialX] == 31){
             // Peon Negro
-        } else if (tablero[posInicialY][posInicialX] == 32){
+            peon.movimientoPeon(this, posInicialY,posInicialX,posFinalY,posFinalX,31);
+
+        } else if (casillas[posInicialY][posInicialX] == 32){
             // Torre Negra
-        } else if (tablero[posInicialY][posInicialX] == 33){
+        } else if (casillas[posInicialY][posInicialX] == 33){
             // Caballo Negro
-        } else if (tablero[posInicialY][posInicialX] == 34){
+        } else if (casillas[posInicialY][posInicialX] == 34){
             // Alfil Negro
-        } else if (tablero[posInicialY][posInicialX] == 35){
+        } else if (casillas[posInicialY][posInicialX] == 35){
             // Reina Negra
-        } else if (tablero[posInicialY][posInicialX] == 36){
+        } else if (casillas[posInicialY][posInicialX] == 36){
             // Rey Negro
         }
     }

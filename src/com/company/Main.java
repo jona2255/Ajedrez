@@ -52,23 +52,91 @@ public class Main {
 
         reglas.asignarJugadores(jugador1, jugador2);
 
-//            while (jugador.ganador != true && jugador2.ganador != true){
-//
-//
-//            }
+        while (jugador1.ganador != true && jugador2.ganador != true){
 
-        tablero.pintarTablero();
+            tablero.pintarTablero();
 
-        reglas.turnos();
+            reglas.turnos();
 
-        String posInicial = piezas.movimientoOrigenPiezas();
-        String posFinal = piezas.movimientoFinalPiezas();
+            String posInicial = piezas.movimientoOrigenPiezas();
+            String posFinal = piezas.movimientoFinalPiezas();
 
-        int posInicialY = tablero.posPiezaY(posInicial);
-        int posInicialX = tablero.posPiezaX(posInicial);
-        int posFinalY = tablero.posPiezaY(posFinal);
-        int posFinalX = tablero.posPiezaX(posFinal);
+            int posInicialY = tablero.posPiezaY(posInicial);
+            int posInicialX = tablero.posPiezaX(posInicial);
+            int posFinalY = tablero.posPiezaY(posFinal);
+            int posFinalX = tablero.posPiezaX(posFinal);
+            int posTablero = tablero.casillas[posInicialY][posInicialX];
 
-        tablero.pieza(posInicialY,posInicialX,posFinalY,posFinalX);
+            if (reglas.turno == 2 && posTablero > 30){
+
+                reglas.movimientoMalo();
+
+                while (reglas.movValido){
+
+                    tablero.pintarTablero();
+
+                    posInicial = piezas.movimientoOrigenPiezas();
+                    posFinal = piezas.movimientoFinalPiezas();
+
+                    posInicialY = tablero.posPiezaY(posInicial);
+                    posInicialX = tablero.posPiezaX(posInicial);
+                    posFinalY = tablero.posPiezaY(posFinal);
+                    posFinalX = tablero.posPiezaX(posFinal);
+
+                    tablero.pieza(posInicialY,posInicialX,posFinalY,posFinalX);
+
+                }
+
+            } else if (reglas.turno == 1 && posTablero < 30){
+
+                reglas.movimientoMalo();
+
+                while (reglas.movValido){
+
+                    tablero.pintarTablero();
+
+                    posInicial = piezas.movimientoOrigenPiezas();
+                    posFinal = piezas.movimientoFinalPiezas();
+
+                    posInicialY = tablero.posPiezaY(posInicial);
+                    posInicialX = tablero.posPiezaX(posInicial);
+                    posFinalY = tablero.posPiezaY(posFinal);
+                    posFinalX = tablero.posPiezaX(posFinal);
+
+                    tablero.pieza(posInicialY,posInicialX,posFinalY,posFinalX);
+
+                }
+
+            }
+
+            tablero.pieza(posInicialY,posInicialX,posFinalY,posFinalX);
+
+
+
+        if (reglas.movValido == true){
+
+            piezas.cambiarTablero(tablero, posInicialY, posInicialX, posFinalY, posFinalX, posTablero);
+
+        } else {
+            reglas.movimientoMalo();
+
+            while (reglas.movValido){
+
+                tablero.pintarTablero();
+
+                posInicial = piezas.movimientoOrigenPiezas();
+                posFinal = piezas.movimientoFinalPiezas();
+
+                posInicialY = tablero.posPiezaY(posInicial);
+                posInicialX = tablero.posPiezaX(posInicial);
+                posFinalY = tablero.posPiezaY(posFinal);
+                posFinalX = tablero.posPiezaX(posFinal);
+
+                tablero.pieza(posInicialY,posInicialX,posFinalY,posFinalX);
+
+            }
+
+        }
+        }
     }
 }
