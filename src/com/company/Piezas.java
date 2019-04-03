@@ -92,12 +92,7 @@ public class Piezas {
         return posFinal;
     }
 
-    void cambiarTablero(Tablero tablero, int posInicialY, int posInicialX, int posFinalY, int posFinalX, int posTablero){
 
-        tablero.casillas[posInicialY][posInicialX] = 0;
-        tablero.casillas[posFinalY][posFinalX] = posTablero;
-
-    }
 
 
 }

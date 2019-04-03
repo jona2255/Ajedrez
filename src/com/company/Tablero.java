@@ -117,18 +117,19 @@ public class Tablero {
         return 0;
     }
 
-    void pieza(int posInicialY, int posInicialX, int posFinalY, int posFinalX){
+    void pieza(Reglas reglas,int posInicialY, int posInicialX, int posFinalY, int posFinalX){
 
         if (casillas[posInicialY][posInicialX] == 21){
             // Peon Blanco
 
-            peon.movimientoPeon(this, posInicialY,posInicialX,posFinalY,posFinalX,21);
+            peon.movimientoPeon(reglas,this, posInicialY,posInicialX,posFinalY,posFinalX,21);
 
         } else if (casillas[posInicialY][posInicialX] == 22){
             // Torre Blanca
         } else if (casillas[posInicialY][posInicialX] == 23){
             // Caballo Blanco
 
+            caballo.movimientoCaballo(reglas,this, posInicialY,posInicialX,posFinalY,posFinalX,23);
 
         } else if (casillas[posInicialY][posInicialX] == 24){
             // Alfil Blanco
@@ -138,12 +139,15 @@ public class Tablero {
             // Rey Blanco
         } else if (casillas[posInicialY][posInicialX] == 31){
             // Peon Negro
-            peon.movimientoPeon(this, posInicialY,posInicialX,posFinalY,posFinalX,31);
+            peon.movimientoPeon(reglas,this, posInicialY,posInicialX,posFinalY,posFinalX,31);
 
         } else if (casillas[posInicialY][posInicialX] == 32){
             // Torre Negra
         } else if (casillas[posInicialY][posInicialX] == 33){
             // Caballo Negro
+
+            caballo.movimientoCaballo(reglas,this, posInicialY,posInicialX,posFinalY,posFinalX,33);
+
         } else if (casillas[posInicialY][posInicialX] == 34){
             // Alfil Negro
         } else if (casillas[posInicialY][posInicialX] == 35){
@@ -151,6 +155,13 @@ public class Tablero {
         } else if (casillas[posInicialY][posInicialX] == 36){
             // Rey Negro
         }
+    }
+
+    void cambiarTablero(Tablero tablero, int posInicialY, int posInicialX, int posFinalY, int posFinalX, int posTablero){
+
+        tablero.casillas[posInicialY][posInicialX] = 0;
+        tablero.casillas[posFinalY][posFinalX] = posTablero;
+
     }
 
 }

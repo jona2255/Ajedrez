@@ -71,7 +71,7 @@ public class Main {
 
                 reglas.movimientoMalo();
 
-                while (reglas.movValido){
+                while (reglas.movValido != true){
 
                     tablero.pintarTablero();
 
@@ -82,8 +82,9 @@ public class Main {
                     posInicialX = tablero.posPiezaX(posInicial);
                     posFinalY = tablero.posPiezaY(posFinal);
                     posFinalX = tablero.posPiezaX(posFinal);
+                    posTablero = tablero.casillas[posInicialY][posInicialX];
 
-                    tablero.pieza(posInicialY,posInicialX,posFinalY,posFinalX);
+                    tablero.pieza(reglas, posInicialY,posInicialX,posFinalY,posFinalX);
 
                 }
 
@@ -91,7 +92,7 @@ public class Main {
 
                 reglas.movimientoMalo();
 
-                while (reglas.movValido){
+                while (reglas.movValido != true){
 
                     tablero.pintarTablero();
 
@@ -102,25 +103,26 @@ public class Main {
                     posInicialX = tablero.posPiezaX(posInicial);
                     posFinalY = tablero.posPiezaY(posFinal);
                     posFinalX = tablero.posPiezaX(posFinal);
+                    posTablero = tablero.casillas[posInicialY][posInicialX];
 
-                    tablero.pieza(posInicialY,posInicialX,posFinalY,posFinalX);
+                    tablero.pieza(reglas, posInicialY,posInicialX,posFinalY,posFinalX);
 
                 }
 
             }
 
-            tablero.pieza(posInicialY,posInicialX,posFinalY,posFinalX);
+            tablero.pieza(reglas,posInicialY,posInicialX,posFinalY,posFinalX);
 
 
 
         if (reglas.movValido == true){
 
-            piezas.cambiarTablero(tablero, posInicialY, posInicialX, posFinalY, posFinalX, posTablero);
+            tablero.cambiarTablero(tablero, posInicialY, posInicialX, posFinalY, posFinalX, posTablero);
 
         } else {
             reglas.movimientoMalo();
 
-            while (reglas.movValido){
+            while (reglas.movValido != true){
 
                 tablero.pintarTablero();
 
@@ -131,8 +133,9 @@ public class Main {
                 posInicialX = tablero.posPiezaX(posInicial);
                 posFinalY = tablero.posPiezaY(posFinal);
                 posFinalX = tablero.posPiezaX(posFinal);
+                posTablero = tablero.casillas[posInicialY][posInicialX];
 
-                tablero.pieza(posInicialY,posInicialX,posFinalY,posFinalX);
+                tablero.pieza(reglas,posInicialY,posInicialX,posFinalY,posFinalX);
 
             }
 
