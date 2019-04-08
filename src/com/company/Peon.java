@@ -12,7 +12,7 @@ public class Peon {
 
             if (posInicialY - posFinalY == 2 ){
                 reglas.movimientoValido(tablero, posInicialY, posInicialX, posFinalY, posFinalX, posTablero);
-            } else if (posInicialY == 13 && (posInicialY - posFinalY) >= 4){
+            } else if (posInicialY == 13 && (posInicialY - posFinalY) == 4){
                 reglas.movimientoValido(tablero, posInicialY, posInicialX, posFinalY, posFinalX, posTablero);
             } else if (posFinalX - posInicialX == 2){
                 reglas.movimientoValido(tablero, posInicialY, posInicialX, posFinalY, posFinalX, posTablero);
@@ -25,7 +25,7 @@ public class Peon {
 
             if (posFinalY - posInicialY == 2 ){
                 reglas.movimientoValido(tablero, posInicialY, posInicialX, posFinalY, posFinalX, posTablero);
-            } else if (posInicialY == 3 && (posFinalY - posInicialY) >= 4){
+            } else if (posInicialY == 3 && (posFinalY - posInicialY) == 4){
                 reglas.movimientoValido(tablero, posInicialY, posInicialX, posFinalY, posFinalX, posTablero);
             } else if (posInicialX - posFinalX == 2){
                 reglas.movimientoValido(tablero, posInicialY, posInicialX, posFinalY, posFinalX, posTablero);

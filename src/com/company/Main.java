@@ -86,6 +86,10 @@ public class Main {
 
                     tablero.pieza(reglas, posInicialY,posInicialX,posFinalY,posFinalX);
 
+                    if (reglas.movValido == true){
+                        tablero.cambiarTablero(tablero, posInicialY, posInicialX, posFinalY, posFinalX, posTablero);
+                    }
+
                 }
 
             } else if (reglas.turno == 1 && posTablero < 30){
@@ -107,6 +111,9 @@ public class Main {
 
                     tablero.pieza(reglas, posInicialY,posInicialX,posFinalY,posFinalX);
 
+                    if (reglas.movValido == true){
+                        tablero.cambiarTablero(tablero, posInicialY, posInicialX, posFinalY, posFinalX, posTablero);
+                    }
                 }
 
             }
@@ -137,6 +144,9 @@ public class Main {
 
                 tablero.pieza(reglas,posInicialY,posInicialX,posFinalY,posFinalX);
 
+                if (reglas.movValido == true){
+                    tablero.cambiarTablero(tablero, posInicialY, posInicialX, posFinalY, posFinalX, posTablero);
+                }
             }
 
         }

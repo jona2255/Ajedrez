@@ -74,7 +74,7 @@ public class Reglas {
 
                 if (posFinalY != posInicialY && posFinalX == posInicialX){
 
-                    for (int i = posInicialY; i >= posFinalY; i--) {
+                    for (int i = posInicialY-1; i >= posFinalY; i--) {
 
                         if (tablero.casillas[i][posInicialX] > 10){
 
@@ -84,8 +84,8 @@ public class Reglas {
 
                 } else {
 
-                    for (int i = posInicialY; i >= posFinalY; i--) {
-                        for (int j = posInicialX; j >= posFinalX; j--) {
+                    for (int i = posInicialY-1; i >= posFinalY; i--) {
+                        for (int j = posInicialX-1; j >= posFinalX; j--) {
 
                             if (tablero.casillas[i][j] > 10){
 
@@ -104,7 +104,7 @@ public class Reglas {
 
                 if (posFinalY != posInicialY && posFinalX == posInicialX){
 
-                    for (int i = posInicialY; i >= posFinalY; i++) {
+                    for (int i = posInicialY+1; i >= posFinalY; i++) {
 
                         if (tablero.casillas[i][posInicialX] > 10){
 
@@ -114,8 +114,8 @@ public class Reglas {
 
                 } else {
 
-                    for (int i = posInicialY; i <= posFinalY; i++) {
-                        for (int j = posInicialX; j <= posFinalX; j++) {
+                    for (int i = posInicialY+1; i <= posFinalY; i++) {
+                        for (int j = posInicialX+1; j <= posFinalX; j++) {
 
                             if (tablero.casillas[i][j] > 10){
 
